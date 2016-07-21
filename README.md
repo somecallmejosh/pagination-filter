@@ -1,16 +1,15 @@
 JS Pagination and Search Project
 ================================
 
-
 ## Requirements
 
 - [ ] Use the filters-example.html file to guide your decision making. Using progressive enhancement, your work should affect the index.html file.
 
-- [ ] Since only 10 students should be shown at a time, your programming needs to calculate the number of pages needed and add the appropriate number of links to the bottom of the page.
+- [x] Since only 10 students should be shown at a time, your programming needs to calculate the number of pages needed and add the appropriate number of links to the bottom of the page.
 
-- [ ] Hide all but the first 10 students when the page loads.
+- [x] Hide all but the first 10 students when the page loads.
 
-- [ ] When a user clicks on “2” in the pagination, students 11 through 20 are shown. When a user clicks “3”, students 21 through 30 are shown. And so on. When “6” is clicked 51 through 55 should be shown.
+- [x] When a user clicks on “2” in the pagination, students 11 through 20 are shown. When a user clicks “3”, students 21 through 30 are shown. And so on. When “6” is clicked 51 through 55 should be shown.
 
 - [ ] Using progressive enhancement, add the student search markup as presented in the filters-example.html file to the index.html file.
 
@@ -30,3 +29,8 @@ JS Pagination and Search Project
 - [ ] As the user types in the search box, dynamically filter the student listings. In other words, after each letter is typed into the search box, display any listings that match .
 
 - [ ] If no matches are found, include a message in the HTML to tell the user there are no matches.
+
+## Completed Demos
+- [54 students](https://somecallmejosh.github.io/pagination-filter/)
+- [44 students](https://somecallmejosh.github.io/pagination-filter/samples/44contacts.html)
+- [64 students](https://somecallmejosh.github.io/pagination-filter/samples/64contacts.html)

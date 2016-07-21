@@ -4,43 +4,72 @@
 
   // DOM Caching
   var itemsToShowPerPage = 10,
-      page = document.querySelector('.page'),
-      pagesRequired,
-      studentItem = document.querySelectorAll('.student-item'),
-      studentItemCount = 0,
-      studentList = document.querySelector('.student-list');
+      page = $('.page'),
+      // searchPhrase is a temp variable to help construct search
+      // functionality
+      searchPhrase = 'dua',
+      studentItem = $('.student-item'),
+      studentItemCount = studentItem.length,
+      studentList = $('.student-list'),
+      // pages required will become a reusable function to offer reuse
+      // to search based pagination and default pagination.
+      // Math.ceil rounds up to the nearest whole number to account for the
+      // the proper number of pages
+      pagesRequired = Math.ceil(studentItemCount / itemsToShowPerPage);
 
-  // Determine the number of students
-  function getStudentCount() {
-    // Count the total number of students 'on the page';
-    for(var i = 0; i < studentItem.length; i++) {
-      studentItemCount += 1;
+  // Function Invocation
+  displayInit();
+  buildPagination(pagesRequired);
+
+  // Event Handlers
+  $('.pagination').on("click", 'li', displayPaginationLinks);
+
+  function displayInit() {
+    // Displays first 10 students
+    studentItem.hide();
+    studentItem.slice(0, itemsToShowPerPage).show();
+  }
+
+  function buildPagination($toPaginate){
+    // Build the pagination link template
+    var template = '<div class="pagination"><ul></ul></div>';
+    // Append the template to the .page container
+    if ($toPaginate > 1) {
+      $('.page').append(template);
+    };
+    // Create pagination links and append to the pagination template
+    for(var i = 1; i <= $toPaginate; i++) {
+      $('.pagination ul').append('<li class="pagination-link"><a href="#">' + i + '</a></li>');
     }
-    return studentItemCount;
+
+    // Set first pagination link to be active.
+    // Will be overridden by
+    $('.pagination-link:first-child a').addClass("active");
   }
 
-  // Determine the number of pages required to display 10 students per page
-  function getPageCount() {
-    var numberOfPagesRequired = Math.ceil(getStudentCount() / itemsToShowPerPage);
-    return numberOfPagesRequired;
+  function displayPaginatedContent($itemToSearch) {
+    var pagStart = itemsToShowPerPage * ($itemToSearch -1);
+    // Subtracting one from $itemToSearch sets index back to zero base.
+    if($itemToSearch == 1) {
+      studentItem.slice(0, itemsToShowPerPage).show();
+    } else if($itemToSearch > 1 && $itemToSearch < pagesRequired) {
+      studentItem.slice(pagStart, pagStart + itemsToShowPerPage).show();
+    } else {
+      studentItem.slice(pagStart).show();
+    }
   }
 
-  // Build the pagination links
-  function buildPaginationLinks() {
-    // Create the parent pagination contianer <div class="pagination">
-      var template = '<div class="pagination"><ul><li><a href="#">1</a></ul></div>',
-      // Create the unordered list
-      // Create the appropriate number of list items
-        // Create anchor links
-        // Add the list item idex (+1) as the content of the anchor link
-    // Append the pagination links to the .page container
+  function displayPaginationLinks(e) {
+    // Prevent anchor link from following #hash
+    e.preventDefault();
+    // Memoize $(this) so we don't have to access the DOM too many times
+    var $this = $(this);
+    // The content of the pagination link that was clicked
+    // will determine what group of students are in view.
+    var pageToShow = $this.text();
+    studentItem.hide();
+    $this.closest('ul').find('a').removeClass('active');
+    $this.find('a').addClass('active');
+    displayPaginatedContent(pageToShow);
   }
-
-  // Hide all but the first 10 students when the page loads.
-
-  // Show the students that correspond to the pagination click;
-
-
-  buildPaginationLiks();
-
 })();
