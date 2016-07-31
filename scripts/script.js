@@ -57,7 +57,7 @@ function StudentObject(avatar, name, email, dateJoined) {
   this.dateJoined = dateJoined;
 }
 
-function filterStudents(arrayToFilter) {
+function filterStudents() {
   // Separate student data from HTML.
   // This way, I don't have to deal with hide/show, or save
   // entire HTML snippets as objects in the array.
