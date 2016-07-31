@@ -131,6 +131,11 @@ function pagination(e) {
   e.preventDefault();
   var start, end;
 
+  function removeLoadingClass() {
+    document.querySelector('body').classList.remove('loading');
+  }
+  document.querySelector('body').classList.add('loading');
+  setTimeout(removeLoadingClass, 400);
   // toggle active class on pagination links
     for(var i = 0; i < paginationLink.length; i++) {
       paginationLink[i].className = "pagination-link"

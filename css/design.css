@@ -117,3 +117,16 @@ body{
       background-color: #4ba6c3;
       color: #fff;
     }
+
+
+.loading {
+  transition: all .2s ease-in-out;
+}
+.student-item {
+  transition: all .2s ease-in-out;
+}
+
+body.loading .student-item {
+  transform: scale(.9);
+  opacity: .1;
+}
