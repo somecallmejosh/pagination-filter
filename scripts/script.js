@@ -135,7 +135,7 @@ function pagination(e) {
     document.querySelector('body').classList.remove('loading');
   }
   document.querySelector('body').classList.add('loading');
-  setTimeout(removeLoadingClass, 400);
+  setTimeout(removeLoadingClass, 200);
   // toggle active class on pagination links
     for(var i = 0; i < paginationLink.length; i++) {
       paginationLink[i].className = "pagination-link"
@@ -205,7 +205,7 @@ function searchFeature() {
     init();
   } else {
     // Otherwise, display a message indicating no matches.
-    alertMessage = "Sorry, none of the students match that name or email address";
+    alertMessage = "Sorry, none of the students matches match that name or email address";
     alertContainer = document.createElement('p');
     alertContainer.className = 'alert-message';
     alertContainer.innerHTML = alertMessage;

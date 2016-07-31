@@ -28,7 +28,7 @@ JS Pagination and Search Project
 
 ## Extra Credit
 
-- [ ] Include simple animations when transitioning between pages.
+- [x] Include simple animations when transitioning between pages.
 
 - [x] As the user types in the search box, dynamically filter the student listings. In other words, after each letter is typed into the search box, display any listings that match .
 
