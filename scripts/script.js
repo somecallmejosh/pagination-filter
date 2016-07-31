@@ -205,7 +205,7 @@ function searchFeature() {
     init();
   } else {
     // Otherwise, display a message indicating no matches.
-    alertMessage = "Sorry, none of the students matches match that name or email address";
+    alertMessage = "Sorry, none of the students match that name or email address";
     alertContainer = document.createElement('p');
     alertContainer.className = 'alert-message';
     alertContainer.innerHTML = alertMessage;
