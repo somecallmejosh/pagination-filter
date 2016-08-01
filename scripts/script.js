@@ -125,6 +125,8 @@ function displayPaginationLinks() {
   paginationWrapper.innerHTML = paginationLinks;
   // Append the template to the page.
   page.appendChild(paginationWrapper);
+  // Default active clise for first pagination item
+  paginationLink[0].classList.add('active');
 }
 
 function pagination(e) {
