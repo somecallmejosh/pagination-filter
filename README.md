@@ -23,7 +23,7 @@ JS Pagination and Search Project
 
 - [x] Search results should also be paginated. For example, if the search returns more than 10 results, those results should be paginated too.
 
-- [ ] Before you submit your project for review, make sure you can check off all of the items on the Student Project Submission Checklist. The checklist is designed to help you make sure you’ve met the grading requirements and that your project is complete and ready to be submitted!
+- [x] Before you submit your project for review, make sure you can check off all of the items on the Student Project Submission Checklist. The checklist is designed to help you make sure you’ve met the grading requirements and that your project is complete and ready to be submitted!
 
 
 ## Extra Credit
